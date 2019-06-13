@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class Com extends Component {
   constructor(props) {
     super(props);
-    this.changeData = this.changeData.bind(this)
     this.state = {
       msg: 'hello world'
     }
@@ -20,7 +19,7 @@ class Com extends Component {
     return (
       <div>
         { this.state.msg }
-        <button onClick = { this.changeData }>修改</button>
+        <button onClick = { this.changeData.bind(this) }>修改</button>
       </div>
     )
   }

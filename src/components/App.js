@@ -7,7 +7,7 @@ class Com extends Component {
     console.log('1', this)
   }
 
-  btnClickFn () {
+  btnClickFn() {
     console.log('2', this)
   }
 
@@ -15,7 +15,7 @@ class Com extends Component {
   render() {
     return (
       <div>
-        <button onClick = { this.btnClickFun }>react按钮</button>
+        <button onClick={this.btnClickFun.bind(this)}>react按钮</button>
       </div>
     )
   }

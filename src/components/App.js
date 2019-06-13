@@ -3,18 +3,23 @@ import React, { Component } from 'react';
 class Com extends Component {
   constructor(props) {
     super(props);
-    console.log('1', this)
+    this.state = {
+      msg: 'hello world'
+    }
   }
 
-  btnClickFn(id) {
-    console.log(id, this)
+  changeData () {
+    this.setState({
+      msg: 'hello msg'
+    })
   }
 
 
   render() {
     return (
       <div>
-        <button onClick = { this.btnClickFn.bind(this,22) }>react按钮</button>
+        { this.state.msg }
+        <button onClick = { this.changeData.bind(this) }>修改</button>
       </div>
     )
   }

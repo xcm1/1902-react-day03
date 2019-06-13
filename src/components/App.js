@@ -6,17 +6,15 @@ class Com extends Component {
     console.log('1', this)
   }
 
-  btnClickFn(event, id) {
+  btnClickFn(id) {
     console.log(id, this)
   }
 
 
   render() {
-    const _this = this
     return (
       <div>
-        <button onClick={function (e) {return _this.btnClickFn(e,11)}}>react按钮</button>
-        <button onClick = { (e) => this.btnClickFn(e,22) }>react按钮</button>
+        <button onClick = { this.btnClickFn.bind(this,22) }>react按钮</button>
       </div>
     )
   }

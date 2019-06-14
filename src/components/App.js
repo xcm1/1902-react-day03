@@ -4,21 +4,28 @@ class Com extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      msg: 'hello world'
+      list: []
     }
   }
 
+  componentDidMount () {
+    fetch('http://www.daxunxun.com/douban').then(res => res.json()).then(data => {
+      console.log(data)
+      this.setState({
+        list: data
+      })
+    })
+  }
 
   render() {
     return (
-      <div>
-        { this.state.msg }
-        <button onClick = { () => {
-          this.setState({
-            msg: 'hello msg'
+      <ul>
+        {
+          this.state.list.map(item => {
+            return (<li key = { item.id }>{ item.title }</li>)
           })
-        } }>修改</button>
-      </div>
+        }
+      </ul>
     )
   }
 }

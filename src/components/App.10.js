@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '@/main.scss'
+
 class Com extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +19,7 @@ class Com extends Component {
 
   render() {
     return (
-      <ul className='list'>
+      <ul>
         {
           this.state.list.map(item => {
             return (<li key = { item.id }>{ item.title }</li>)
